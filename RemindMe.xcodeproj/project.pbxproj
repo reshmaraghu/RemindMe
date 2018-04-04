@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		153027E398BC7AFEDB2235C3 /* Pods_RemindMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0172512CA1A5EC20F970D79E /* Pods_RemindMe.framework */; };
 		1AF06A72A74E6B4EBDDD080C /* Pods_RemindMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91265AF48C02329AE592C693 /* Pods_RemindMeUITests.framework */; };
+		206B113A20749AEE00CD155D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 206B113920749AEE00CD155D /* GoogleService-Info.plist */; };
 		20711A8020738DEC008E25A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20711A7F20738DEC008E25A1 /* AppDelegate.swift */; };
 		20711A8220738DEC008E25A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20711A8120738DEC008E25A1 /* ViewController.swift */; };
 		20711A8520738DEC008E25A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20711A8320738DEC008E25A1 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* Begin PBXFileReference section */
 		0172512CA1A5EC20F970D79E /* Pods_RemindMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemindMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AD78E789CD492BB8A5D3B9 /* Pods-RemindMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.release.xcconfig"; sourceTree = "<group>"; };
+		206B113920749AEE00CD155D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		20711A7C20738DEC008E25A1 /* RemindMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20711A7F20738DEC008E25A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20711A8120738DEC008E25A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 		20711A7E20738DEC008E25A1 /* RemindMe */ = {
 			isa = PBXGroup;
 			children = (
+				206B113920749AEE00CD155D /* GoogleService-Info.plist */,
 				20711A7F20738DEC008E25A1 /* AppDelegate.swift */,
 				20711A8120738DEC008E25A1 /* ViewController.swift */,
 				20711A8320738DEC008E25A1 /* Main.storyboard */,
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				20711A8A20738DEC008E25A1 /* LaunchScreen.storyboard in Resources */,
+				206B113A20749AEE00CD155D /* GoogleService-Info.plist in Resources */,
 				20711A8720738DEC008E25A1 /* Assets.xcassets in Resources */,
 				20711A8520738DEC008E25A1 /* Main.storyboard in Resources */,
 			);
@@ -443,9 +447,14 @@
 			files = (
 			);
 			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-RemindMeTests/Pods-RemindMeTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -645,7 +654,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RemindMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apps.RemindMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -660,7 +669,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RemindMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apps.RemindMe;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -676,7 +685,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RemindMeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apps.RemindMeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -693,7 +702,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RemindMeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apps.RemindMeTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -709,7 +718,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RemindMeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apps.RemindMeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -725,7 +734,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RemindMeUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.apps.RemindMeUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
