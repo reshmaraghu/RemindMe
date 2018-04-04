@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		153027E398BC7AFEDB2235C3 /* Pods_RemindMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0172512CA1A5EC20F970D79E /* Pods_RemindMe.framework */; };
 		1AF06A72A74E6B4EBDDD080C /* Pods_RemindMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91265AF48C02329AE592C693 /* Pods_RemindMeUITests.framework */; };
+		206B112C207477FA00CD155D /* RecollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B112B207477FA00CD155D /* RecollectionTests.swift */; };
+		206B112E20747A0D00CD155D /* MemoryBankManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B112D20747A0D00CD155D /* MemoryBankManager.swift */; };
+		206B1131207489FA00CD155D /* PersistanceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B1130207489FA00CD155D /* PersistanceFactory.swift */; };
+		206B113320748A1700CD155D /* Persistance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B113220748A1700CD155D /* Persistance.swift */; };
+		206B113620748A8A00CD155D /* Memory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B113520748A8A00CD155D /* Memory.swift */; };
+		206B113820748AFE00CD155D /* FirebasePersistanceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B113720748AFE00CD155D /* FirebasePersistanceManager.swift */; };
 		206B113A20749AEE00CD155D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 206B113920749AEE00CD155D /* GoogleService-Info.plist */; };
 		20711A8020738DEC008E25A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20711A7F20738DEC008E25A1 /* AppDelegate.swift */; };
 		20711A8220738DEC008E25A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20711A8120738DEC008E25A1 /* ViewController.swift */; };
@@ -40,6 +46,12 @@
 /* Begin PBXFileReference section */
 		0172512CA1A5EC20F970D79E /* Pods_RemindMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemindMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AD78E789CD492BB8A5D3B9 /* Pods-RemindMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.release.xcconfig"; sourceTree = "<group>"; };
+		206B112B207477FA00CD155D /* RecollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecollectionTests.swift; sourceTree = "<group>"; };
+		206B112D20747A0D00CD155D /* MemoryBankManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryBankManager.swift; sourceTree = "<group>"; };
+		206B1130207489FA00CD155D /* PersistanceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceFactory.swift; sourceTree = "<group>"; };
+		206B113220748A1700CD155D /* Persistance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistance.swift; sourceTree = "<group>"; };
+		206B113520748A8A00CD155D /* Memory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Memory.swift; sourceTree = "<group>"; };
+		206B113720748AFE00CD155D /* FirebasePersistanceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebasePersistanceManager.swift; sourceTree = "<group>"; };
 		206B113920749AEE00CD155D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		20711A7C20738DEC008E25A1 /* RemindMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RemindMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		20711A7F20738DEC008E25A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,9 +103,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		206B112F207489D900CD155D /* Persistance */ = {
+			isa = PBXGroup;
+			children = (
+				206B1130207489FA00CD155D /* PersistanceFactory.swift */,
+				206B113220748A1700CD155D /* Persistance.swift */,
+				206B113720748AFE00CD155D /* FirebasePersistanceManager.swift */,
+			);
+			path = Persistance;
+			sourceTree = "<group>";
+		};
+		206B113420748A8000CD155D /* Memory */ = {
+			isa = PBXGroup;
+			children = (
+				206B113520748A8A00CD155D /* Memory.swift */,
+				206B112D20747A0D00CD155D /* MemoryBankManager.swift */,
+			);
+			path = Memory;
+			sourceTree = "<group>";
+		};
 		20711A7320738DEC008E25A1 = {
 			isa = PBXGroup;
 			children = (
+				206B113420748A8000CD155D /* Memory */,
+				206B112F207489D900CD155D /* Persistance */,
 				20711A7E20738DEC008E25A1 /* RemindMe */,
 				20711A9320738DEC008E25A1 /* RemindMeTests */,
 				20711A9E20738DEC008E25A1 /* RemindMeUITests */,
@@ -130,6 +163,7 @@
 		20711A9320738DEC008E25A1 /* RemindMeTests */ = {
 			isa = PBXGroup;
 			children = (
+				206B112B207477FA00CD155D /* RecollectionTests.swift */,
 				20711A9420738DEC008E25A1 /* RemindMeTests.swift */,
 				20711A9620738DEC008E25A1 /* Info.plist */,
 			);
@@ -483,7 +517,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206B113620748A8A00CD155D /* Memory.swift in Sources */,
+				206B1131207489FA00CD155D /* PersistanceFactory.swift in Sources */,
+				206B113820748AFE00CD155D /* FirebasePersistanceManager.swift in Sources */,
 				20711A8220738DEC008E25A1 /* ViewController.swift in Sources */,
+				206B112E20747A0D00CD155D /* MemoryBankManager.swift in Sources */,
+				206B113320748A1700CD155D /* Persistance.swift in Sources */,
 				20711A8020738DEC008E25A1 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -492,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				206B112C207477FA00CD155D /* RecollectionTests.swift in Sources */,
 				20711A9520738DEC008E25A1 /* RemindMeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -652,6 +692,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97XB6A7238;
 				INFOPLIST_FILE = RemindMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
@@ -667,6 +708,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 97XB6A7238;
 				INFOPLIST_FILE = RemindMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
