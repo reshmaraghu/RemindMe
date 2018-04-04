@@ -6,12 +6,14 @@ target 'RemindMe' do
   use_frameworks!
 
   # Pods for RemindMe
+  pod 'Firebase'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
 
   target 'RemindMeTests' do
     inherit! :search_paths
     # Pods for testing
+	pod 'Firebase'
   end
 
   target 'RemindMeUITests' do
