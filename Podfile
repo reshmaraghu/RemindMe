@@ -9,6 +9,7 @@ target 'RemindMe' do
   pod 'Firebase'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
 
   target 'RemindMeTests' do
     inherit! :search_paths
