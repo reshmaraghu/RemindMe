@@ -11,6 +11,7 @@ target 'RemindMe' do
   pod 'Firebase/Firestore'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
   pod "RazzleDazzle"
+  pod 'RAMReel'
 
   target 'RemindMeTests' do
     inherit! :search_paths
