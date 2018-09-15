@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		153027E398BC7AFEDB2235C3 /* Pods_RemindMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0172512CA1A5EC20F970D79E /* Pods_RemindMe.framework */; };
 		1AF06A72A74E6B4EBDDD080C /* Pods_RemindMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91265AF48C02329AE592C693 /* Pods_RemindMeUITests.framework */; };
+		20382728214D62D70012FC5F /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20382727214D62D70012FC5F /* FirstVC.swift */; };
+		2042EA2B2146BBE600576DA7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2042EA2A2146BBE600576DA7 /* GradientView.swift */; };
+		2042EA2D2146C08200576DA7 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2042EA2C2146C08200576DA7 /* SplashScreen.swift */; };
 		206B112C207477FA00CD155D /* RecollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B112B207477FA00CD155D /* RecollectionTests.swift */; };
 		206B112E20747A0D00CD155D /* MemoryBankManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B112D20747A0D00CD155D /* MemoryBankManager.swift */; };
 		206B1131207489FA00CD155D /* PersistanceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B1130207489FA00CD155D /* PersistanceFactory.swift */; };
@@ -46,6 +49,9 @@
 /* Begin PBXFileReference section */
 		0172512CA1A5EC20F970D79E /* Pods_RemindMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemindMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AD78E789CD492BB8A5D3B9 /* Pods-RemindMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.release.xcconfig"; sourceTree = "<group>"; };
+		20382727214D62D70012FC5F /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
+		2042EA2A2146BBE600576DA7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
+		2042EA2C2146C08200576DA7 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		206B112B207477FA00CD155D /* RecollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecollectionTests.swift; sourceTree = "<group>"; };
 		206B112D20747A0D00CD155D /* MemoryBankManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoryBankManager.swift; sourceTree = "<group>"; };
 		206B1130207489FA00CD155D /* PersistanceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistanceFactory.swift; sourceTree = "<group>"; };
@@ -156,6 +162,9 @@
 				20711A8620738DEC008E25A1 /* Assets.xcassets */,
 				20711A8820738DEC008E25A1 /* LaunchScreen.storyboard */,
 				20711A8B20738DEC008E25A1 /* Info.plist */,
+				2042EA2A2146BBE600576DA7 /* GradientView.swift */,
+				2042EA2C2146C08200576DA7 /* SplashScreen.swift */,
+				20382727214D62D70012FC5F /* FirstVC.swift */,
 			);
 			path = RemindMe;
 			sourceTree = "<group>";
@@ -214,7 +223,6 @@
 				20711A7920738DEC008E25A1 /* Frameworks */,
 				20711A7A20738DEC008E25A1 /* Resources */,
 				902079F5E8E8FF096D888775 /* [CP] Embed Pods Frameworks */,
-				527393580B919B3357E6DEDF /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -234,7 +242,6 @@
 				20711A8D20738DEC008E25A1 /* Frameworks */,
 				20711A8E20738DEC008E25A1 /* Resources */,
 				EBF572F8ED526282B89F4E86 /* [CP] Embed Pods Frameworks */,
-				4AEA49F8FFB9BB8D35407581 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -254,8 +261,6 @@
 				20711A9720738DEC008E25A1 /* Sources */,
 				20711A9820738DEC008E25A1 /* Frameworks */,
 				20711A9920738DEC008E25A1 /* Resources */,
-				F6A50B76CFB02F4D5BB26246 /* [CP] Embed Pods Frameworks */,
-				756DB0D8A3E7736F3DF38EAC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -360,51 +365,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4AEA49F8FFB9BB8D35407581 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemindMeTests/Pods-RemindMeTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		527393580B919B3357E6DEDF /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		756DB0D8A3E7736F3DF38EAC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemindMeUITests/Pods-RemindMeUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		895174A296ED59FE76190B3F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -449,8 +409,10 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RazzleDazzle/RazzleDazzle.framework",
+				"${BUILT_PRODUCTS_DIR}/Spring/Spring.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
 				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
@@ -461,8 +423,10 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RazzleDazzle.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Spring.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
@@ -482,32 +446,17 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-RemindMeTests/Pods-RemindMeTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemindMeTests/Pods-RemindMeTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F6A50B76CFB02F4D5BB26246 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RemindMeUITests/Pods-RemindMeUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -517,13 +466,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2042EA2D2146C08200576DA7 /* SplashScreen.swift in Sources */,
 				206B113620748A8A00CD155D /* Memory.swift in Sources */,
 				206B1131207489FA00CD155D /* PersistanceFactory.swift in Sources */,
+				20382728214D62D70012FC5F /* FirstVC.swift in Sources */,
 				206B113820748AFE00CD155D /* FirebasePersistanceManager.swift in Sources */,
 				20711A8220738DEC008E25A1 /* ViewController.swift in Sources */,
 				206B112E20747A0D00CD155D /* MemoryBankManager.swift in Sources */,
 				206B113320748A1700CD155D /* Persistance.swift in Sources */,
 				20711A8020738DEC008E25A1 /* AppDelegate.swift in Sources */,
+				2042EA2B2146BBE600576DA7 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,12 +643,14 @@
 			baseConfigurationReference = 6C7AF9E3A98B85BE3D31AB1B /* Pods-RemindMe.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97XB6A7238;
+				DEVELOPMENT_TEAM = AA5SK3ZWE3;
 				INFOPLIST_FILE = RemindMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.roambi.mobi.sac1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -707,12 +661,14 @@
 			baseConfigurationReference = 13AD78E789CD492BB8A5D3B9 /* Pods-RemindMe.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 97XB6A7238;
+				DEVELOPMENT_TEAM = AA5SK3ZWE3;
 				INFOPLIST_FILE = RemindMe/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sap.roambi.mobi.sac1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -725,6 +681,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AA5SK3ZWE3;
 				INFOPLIST_FILE = RemindMeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
@@ -742,6 +699,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = AA5SK3ZWE3;
 				INFOPLIST_FILE = RemindMeTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hobbylobby.remindme.ios;
