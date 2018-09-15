@@ -46,7 +46,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beaver" translatesAutoresizingMaskIntoConstraints="NO" id="xEz-dP-w3p" customClass="SpringImageView" customModule="Spring">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Beaver" translatesAutoresizingMaskIntoConstraints="NO" id="xEz-dP-w3p">
                                 <rect key="frame" x="147" y="340" width="120" height="120"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xEz-dP-w3p" secondAttribute="height" multiplier="1:1" id="1oX-T9-JxA"/>
@@ -70,7 +70,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <segue destination="f3a-IL-oro" kind="show" id="4Rh-kb-un4"/>
+                                    <segue destination="f3a-IL-oro" kind="presentation" id="4Rh-kb-un4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -98,59 +98,95 @@
                     </navigationItem>
                     <connections>
                         <outlet property="button" destination="PpD-lP-Fdz" id="yBS-gd-kdn"/>
-                        <outlet property="image" destination="xEz-dP-w3p" id="J2D-fZ-n7B"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dca-sF-SD4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="36" y="167.76611694152925"/>
         </scene>
-        <!--View Controller-->
+        <!--Search-->
         <scene sceneID="nxF-kN-WpA">
             <objects>
                 <viewController id="0ow-nv-gbt" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9Fn-Nf-HOW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="Mhl-yk-Fg8"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Search" id="A6O-Pr-Kck">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-15"/>
+                    <tabBarItem key="tabBarItem" title="Search" image="Search" selectedImage="Search" id="A6O-Pr-Kck" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-10"/>
                         <color key="badgeColor" red="0.61176470589999998" green="0.75294117650000003" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" red="0.61176470589999998" green="0.75294117650000003" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" red="0.61176470589999998" green="0.75294117650000003" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="81E-L5-xmR" id="gPm-an-4Mj"/>
+                        </connections>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G1o-r5-5lj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="81E-L5-xmR" customClass="RAMLeftRotationAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1666" y="550"/>
         </scene>
-        <!--View Controller-->
+        <!--Add-->
         <scene sceneID="TOG-0Z-RaA">
             <objects>
                 <viewController id="zYa-mQ-p1i" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CTz-E7-jtz">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.9882352941176471" green="0.9882352941176471" blue="0.9882352941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <viewLayoutGuide key="safeArea" id="cvw-sB-Wro"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="" image="Add" selectedImage="Add" id="BEw-cJ-At0">
-                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-12"/>
+                    <tabBarItem key="tabBarItem" title="Add" image="Add" selectedImage="Add" id="BEw-cJ-At0" customClass="RAMAnimatedTabBarItem" customModule="RAMAnimatedTabBarController">
+                        <inset key="imageInsets" minX="0.0" minY="0.0" maxX="0.0" maxY="-5"/>
                         <color key="badgeColor" red="0.61176470589999998" green="0.75294117650000003" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="color" keyPath="iconColor">
+                                <color key="value" red="0.61176470589999998" green="0.75294117650000003" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="textColor">
+                                <color key="value" red="0.61176470589999998" green="0.75294117650000003" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                        <connections>
+                            <outlet property="animation" destination="zyA-db-Qmh" id="jue-84-tTO"/>
+                        </connections>
                     </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s2Q-nH-czA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <customObject id="zyA-db-Qmh" customClass="RAMLeftRotationAnimation" customModule="RAMAnimatedTabBarController">
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1665" y="-206"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Animated Tab Bar Controller-->
         <scene sceneID="efs-Ij-KsU">
             <objects>
-                <tabBarController id="f3a-IL-oro" sceneMemberID="viewController">
+                <tabBarController id="f3a-IL-oro" customClass="RAMAnimatedTabBarController" customModule="RAMAnimatedTabBarController" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="bbL-h1-pqW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="barTintColor" red="0.93333333333333335" green="0.93333333333333335" blue="0.93333333333333335" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="selectedImageTintColor" red="0.61176470589999998" green="0.75294117650000003" blue="0.90588235289999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
