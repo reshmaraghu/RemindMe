@@ -12,6 +12,7 @@ target 'RemindMe' do
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
   pod "RazzleDazzle"
   pod 'RAMReel'
+  pod 'RAMAnimatedTabBarController'
 
   target 'RemindMeTests' do
     inherit! :search_paths
