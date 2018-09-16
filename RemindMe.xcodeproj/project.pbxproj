@@ -10,7 +10,9 @@
 		153027E398BC7AFEDB2235C3 /* Pods_RemindMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0172512CA1A5EC20F970D79E /* Pods_RemindMe.framework */; };
 		1AF06A72A74E6B4EBDDD080C /* Pods_RemindMeUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91265AF48C02329AE592C693 /* Pods_RemindMeUITests.framework */; };
 		20382728214D62D70012FC5F /* FirstVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20382727214D62D70012FC5F /* FirstVC.swift */; };
-		2038272B214D796D0012FC5F /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2038272A214D796D0012FC5F /* SearchController.swift */; };
+		2038272B214D796D0012FC5F /* SearchMemoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2038272A214D796D0012FC5F /* SearchMemoryController.swift */; };
+		2038272D214D7C8F0012FC5F /* AddMemoryController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2038272C214D7C8F0012FC5F /* AddMemoryController.swift */; };
+		2038272F214E1C240012FC5F /* UITextFiled+Underline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2038272E214E1C240012FC5F /* UITextFiled+Underline.swift */; };
 		2042EA2B2146BBE600576DA7 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2042EA2A2146BBE600576DA7 /* GradientView.swift */; };
 		2042EA2D2146C08200576DA7 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2042EA2C2146C08200576DA7 /* SplashScreen.swift */; };
 		206B112C207477FA00CD155D /* RecollectionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 206B112B207477FA00CD155D /* RecollectionTests.swift */; };
@@ -51,7 +53,9 @@
 		0172512CA1A5EC20F970D79E /* Pods_RemindMe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RemindMe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AD78E789CD492BB8A5D3B9 /* Pods-RemindMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RemindMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-RemindMe/Pods-RemindMe.release.xcconfig"; sourceTree = "<group>"; };
 		20382727214D62D70012FC5F /* FirstVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstVC.swift; sourceTree = "<group>"; };
-		2038272A214D796D0012FC5F /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
+		2038272A214D796D0012FC5F /* SearchMemoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMemoryController.swift; sourceTree = "<group>"; };
+		2038272C214D7C8F0012FC5F /* AddMemoryController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddMemoryController.swift; sourceTree = "<group>"; };
+		2038272E214E1C240012FC5F /* UITextFiled+Underline.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextFiled+Underline.swift"; sourceTree = "<group>"; };
 		2042EA2A2146BBE600576DA7 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		2042EA2C2146C08200576DA7 /* SplashScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		206B112B207477FA00CD155D /* RecollectionTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecollectionTests.swift; sourceTree = "<group>"; };
@@ -167,7 +171,9 @@
 				2042EA2A2146BBE600576DA7 /* GradientView.swift */,
 				2042EA2C2146C08200576DA7 /* SplashScreen.swift */,
 				20382727214D62D70012FC5F /* FirstVC.swift */,
-				2038272A214D796D0012FC5F /* SearchController.swift */,
+				2038272A214D796D0012FC5F /* SearchMemoryController.swift */,
+				2038272C214D7C8F0012FC5F /* AddMemoryController.swift */,
+				2038272E214E1C240012FC5F /* UITextFiled+Underline.swift */,
 			);
 			path = RemindMe;
 			sourceTree = "<group>";
@@ -475,13 +481,15 @@
 			files = (
 				2042EA2D2146C08200576DA7 /* SplashScreen.swift in Sources */,
 				206B113620748A8A00CD155D /* Memory.swift in Sources */,
+				2038272D214D7C8F0012FC5F /* AddMemoryController.swift in Sources */,
 				206B1131207489FA00CD155D /* PersistanceFactory.swift in Sources */,
 				20382728214D62D70012FC5F /* FirstVC.swift in Sources */,
 				206B113820748AFE00CD155D /* FirebasePersistanceManager.swift in Sources */,
 				20711A8220738DEC008E25A1 /* ViewController.swift in Sources */,
+				2038272F214E1C240012FC5F /* UITextFiled+Underline.swift in Sources */,
 				206B112E20747A0D00CD155D /* MemoryBankManager.swift in Sources */,
 				206B113320748A1700CD155D /* Persistance.swift in Sources */,
-				2038272B214D796D0012FC5F /* SearchController.swift in Sources */,
+				2038272B214D796D0012FC5F /* SearchMemoryController.swift in Sources */,
 				20711A8020738DEC008E25A1 /* AppDelegate.swift in Sources */,
 				2042EA2B2146BBE600576DA7 /* GradientView.swift in Sources */,
 			);

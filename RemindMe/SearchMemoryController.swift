@@ -1,5 +1,5 @@
 //
-//  SearchController.swift
+//  SearchMemoryController.swift
 //  RemindMe
 //
 //  Created by Raghu, Reshma L on 9/15/18.
@@ -9,7 +9,7 @@
 import UIKit
 import RAMReel
 
-class SearchController: UIViewController, UICollectionViewDelegate {
+class SearchMemoryController: UIViewController, UICollectionViewDelegate {
 
 	var dataSource: SimplePrefixQueryDataSource!
 	var ramReel: RAMReel<RAMCell, RAMTextField, SimplePrefixQueryDataSource>!
