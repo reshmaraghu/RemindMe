@@ -8,11 +8,16 @@
 
 import UIKit
 
-class AddMemoryController: UIViewController {
+class AddMemoryController: UIViewController, UITextFieldDelegate {
 
 	@IBOutlet var inputTextField: UITextField!
 
 	override func viewDidLoad() {
 		inputTextField.useUnderline()
+	}
+
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+		inputTextField.resignFirstResponder()
+		return true
 	}
 }
