@@ -10,17 +10,18 @@ import Foundation
 
 enum DBTYPE {
 	case firebase
+	case sqlite
 }
 
 struct PersistanceFactory {
 
-	private static let dbType = DBTYPE.firebase
+	static func getPersistanceManager(type: DBTYPE) -> Persistance {
 
-	static func getPersistanceManager() -> Persistance {
-
-		switch dbType {
+		switch type {
 		case .firebase:
 			return FirebasePersistanceManager()
+		case .sqlite:
+			return SQLitePersistanceManager.sharedManager
 		}
 	}
 }

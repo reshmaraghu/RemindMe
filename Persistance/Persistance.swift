@@ -8,4 +8,7 @@
 
 import Foundation
 
-protocol Persistance {}
+protocol Persistance {
+
+	func save(text: String, for: [String])
+}

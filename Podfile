@@ -11,18 +11,8 @@ target 'RemindMe' do
   pod 'Firebase/Firestore'
   pod 'Spring', :git => 'https://github.com/MengTo/Spring.git'
   pod "RazzleDazzle"
-  pod 'RAMReel'
+  pod 'RAMReel', :git => 'https://github.com/Ramotion/reel-search.git'
   pod 'RAMAnimatedTabBarController'
-
-  target 'RemindMeTests' do
-    inherit! :search_paths
-    # Pods for testing
-	pod 'Firebase'
-  end
-
-  target 'RemindMeUITests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
+  #pod 'googleapis', :path => '.'
 
 end

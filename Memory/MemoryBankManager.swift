@@ -9,8 +9,9 @@
 import Foundation
 
 struct MemoryBankManager {
+	
 	static let shared = MemoryBankManager()
-	let db: Persistance = PersistanceFactory.getPersistanceManager()
+	let db: Persistance = PersistanceFactory.getPersistanceManager(type: DBTYPE.sqlite)
 	
 	private init() {
 
