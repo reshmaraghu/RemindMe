@@ -9,7 +9,7 @@
 import Foundation
 
 struct MemoryModel {
-	var Id: Int64!
+	var uniqueId: Int64!
 	var memory: NSString
 
 	init(memory: NSString) {

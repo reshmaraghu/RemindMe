@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RAMReel
 
 struct SQLitePersistanceManager {
 
@@ -54,7 +55,7 @@ struct SQLitePersistanceManager {
 	}
 }
 
-extension SQLitePersistanceManager: Persistance {
+extension SQLitePersistanceManager: Persistance, FlowDataSource {
 
 	func save(text: String, for words: [String]) {
 		do {
@@ -72,4 +73,35 @@ extension SQLitePersistanceManager: Persistance {
 		}
 	}
 
+	typealias CompletionHandler = (_ memories: [String]) -> Void
+	func getMemories(for word: String, completionHandler: @escaping CompletionHandler) {
+		var memories = [String]()
+		do {
+			if let links = try db?.getLinks(word: word as NSString) {
+				for link in links {
+					do {
+						if let memory = try db?.getMemory(id: link.memoryId) {
+							memories.append(memory.memory as String)
+						}
+					} catch let error as NSError {
+						print("❌ Unable to get memory for \(link.memoryId):\(link.word) : \(error.localizedDescription)")
+					}
+				}
+			}
+
+		} catch let error as NSError {
+			print("❌ Unable to get links for \(word): \(error.localizedDescription)")
+		}
+		completionHandler(memories)
+	}
+
+	public func resultsForQuery(_ query: String, completionHandler: @escaping (_ memories: [String]) -> Void) {
+		if(query == ""){
+			completionHandler([""])
+		} else{
+			self.getMemories(for: query) {(memories) in
+				completionHandler(memories)
+			}
+		}
+	}
 }
