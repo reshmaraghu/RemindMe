@@ -71,7 +71,7 @@ class SQLiteDatabase {
 	func insertMemory(memory: MemoryModel) throws -> Int64 {
 		let insertSql = "INSERT INTO Memories (Memory) VALUES (?);"
 		let insertStatement = try prepareStatement(sql: insertSql)
-		let memory: NSString = memory.memory
+		let memory: NSString = memory.memory.lowercased as NSString
 		guard sqlite3_bind_text(insertStatement, 1, memory.utf8String, -1, nil) == SQLITE_OK else {
 			throw SQLiteError.Bind(message: errorMessage)
 		}
@@ -79,7 +79,7 @@ class SQLiteDatabase {
 			throw SQLiteError.Step(message: errorMessage)
 		}
 		let rowId = sqlite3_last_insert_rowid(self.dbPointer)
-		print("✴️✴️Successfully inserted row: \(rowId) - \(memory)")
+		print("✴️✴️Successfully inserted memory: \(rowId) - \(memory)")
 		sqlite3_finalize(insertStatement)
 		return rowId
 	}
@@ -87,7 +87,7 @@ class SQLiteDatabase {
 	func insertLink(link: Link) throws {
 		let insertSql = "INSERT INTO Links (Word, MemoryId) VALUES (?, ?);"
 		let insertStatement = try prepareStatement(sql: insertSql)
-		let word: NSString = link.word
+		let word: NSString = link.word.lowercased as NSString
 		let memoryId: Int64 = link.memoryId
 		guard sqlite3_bind_text(insertStatement, 1, word.utf8String, -1, nil) == SQLITE_OK &&
 				sqlite3_bind_int64(insertStatement, 2, memoryId) == SQLITE_OK else {
@@ -96,7 +96,7 @@ class SQLiteDatabase {
 		guard sqlite3_step(insertStatement) == SQLITE_DONE else {
 			throw SQLiteError.Step(message: errorMessage)
 		}
-		print("✴️✴️Successfully inserted row: \(word)-\(memoryId)")
+		print("✴️✴️Successfully inserted link: \(word)-\(memoryId)")
 		sqlite3_finalize(insertStatement)
 	}
 
@@ -111,17 +111,23 @@ class SQLiteDatabase {
 		guard sqlite3_bind_int64(queryStatement, 1, id) == SQLITE_OK else {
 			throw SQLiteError.Bind(message: errorMessage)
 		}
-		let uniqueId = sqlite3_column_int64(queryStatement, 0)
-		let memory = String(cString: sqlite3_column_text(queryStatement, 1)!) as NSString
-		var memoryModel = MemoryModel(memory: memory)
-		memoryModel.uniqueId = uniqueId
-		print("✴️✴️Successfully fetched row: \(uniqueId)-\(memory)")
-		return memoryModel
+		if sqlite3_step(queryStatement) == SQLITE_ROW {
+			let uniqueId = sqlite3_column_int64(queryStatement, 0)
+			let text = sqlite3_column_text(queryStatement, 1)!
+			let memory = String(cString: text) as NSString
+			var memoryModel = MemoryModel(memory: memory)
+			memoryModel.uniqueId = uniqueId
+			print("✴️✴️Successfully fetched memory: \(uniqueId)-\(memory)")
+			return memoryModel
+		} else {
+			throw SQLiteError.Step(message: errorMessage)
+		}
 	}
 
 	func getLinks(word: NSString) throws -> [Link] {
 		var links = [Link]()
 		let queryStatementString = "SELECT * FROM Links WHERE Word = ?;"
+		let word = word.lowercased as NSString
 		guard let queryStatement = try? prepareStatement(sql: queryStatementString) else {
 			throw SQLiteError.Prepare(message: errorMessage)
 		}
@@ -136,7 +142,7 @@ class SQLiteDatabase {
 			let memoryId = sqlite3_column_int64(queryStatement, 1)
 			let link = Link(word: word, memoryId: memoryId)
 			links.append(link)
-			print("✴️✴️Successfully fetched row: \(memoryId)-\(word)")
+			print("✴️✴️Successfully fetched link: \(memoryId)-\(word)")
 		}
 		return links
 	}

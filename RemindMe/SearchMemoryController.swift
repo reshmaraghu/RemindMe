@@ -30,8 +30,8 @@ class SearchMemoryController: UIViewController, UICollectionViewDelegate {
 		ramReel.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
 	}*/
 
-	var dataSource = FirebasePersistanceManager()
-	var ramReel: RAMReel<RAMCell, RAMTextField, FirebasePersistanceManager>!
+	var dataSource = SQLitePersistanceManager.sharedManager
+	var ramReel: RAMReel<RAMCell, RAMTextField, SQLitePersistanceManager>!
 
 	override func viewDidLoad() {
 		super.viewDidLoad()

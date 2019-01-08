@@ -55,7 +55,7 @@ struct SQLitePersistanceManager {
 	}
 }
 
-extension SQLitePersistanceManager: Persistance, FlowDataSource {
+extension SQLitePersistanceManager: Persistance {
 
 	func save(text: String, for words: [String]) {
 		do {
@@ -94,6 +94,9 @@ extension SQLitePersistanceManager: Persistance, FlowDataSource {
 		}
 		completionHandler(memories)
 	}
+}
+
+extension SQLitePersistanceManager: FlowDataSource {
 
 	public func resultsForQuery(_ query: String, completionHandler: @escaping (_ memories: [String]) -> Void) {
 		if(query == ""){
